@@ -4,7 +4,7 @@
 
 ---
 
-## Motivation (and a storytime)
+## Motivation (and personal anecdote)
 
 This work is deeply personal to me, and I am genuinely excited to give something back to future students of this course.
 
