@@ -14,7 +14,7 @@ This experience does not fully disappear with more training. Even today, with a 
 
 DS 5690 dedicates a substantial portion of the semester to *Formal Algorithms for Transformers* (Phuong & Hutter, 2022), a paper written in exactly this kind of compact, formal mathematical style. For students without significant prior experience reading this style of notation, the paper can feel like a wall. As someone with expertise in both mathematics and in teaching and tutoring math, I wanted to build something that could lower that wall: a Claude skill that excels at taking formal pseudocode or mathematical algorithms and rendering them as clear, step-by-step numerical traces.
 
-I would strongly encourage the use of these tools in DS 5690 alongside the investigation of the formal algorithms paper. As a math student, having access to a worked visual example for every algorithm we studied would have been a tremendous benefit to my education. I hope these skills provide that for students of this course.
+I would strongly encourage the use of these tools in DS 5690 alongside the investigation of the formal algorithms paper. As a math student, having access to a worked visual example for every algorithm we studied would have been a tremendous benefit to my education. I hope this project can prove useful for students of this course.
 
 ---
 
