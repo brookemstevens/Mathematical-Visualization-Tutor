@@ -141,8 +141,6 @@ Beyond the Phuong & Hutter paper covered in class, this workflow applies equally
 
 ### Demos
 
-### Demos
-
 - [Algorithm Math Visualizer](https://claude.ai/share/098b060f-2633-4c89-ba21-fb12068d8655) — Formal Algorithms for Transformers (2022)
 - [Chained Skills](https://claude.ai/share/92730c75-8e83-4109-bd6b-d4a3f162a50e) — Research Paper → Pseudocode → Algorithm Math Visualizer
 
