@@ -137,6 +137,15 @@ This two-step pipeline takes any research paper and produces an approachable vis
 
 Beyond the Phuong & Hutter paper covered in class, this workflow applies equally to any paper a student encounters in research, coursework, or independent study.
 
+---
+
+### Demos
+
+- [Algorithm Math Visualizer (Formal Algorithms for Transformers, 2022)](https://claude.ai/share/098b060f-2633-4c89-ba21-fb12068d8655)
+- [Chained Skills (Research Paper → Pseudocode → Algorithm Math Visualizer)](https://claude.ai/share/92730c75-8e83-4109-bd6b-d4a3f162a50e) — Research Paper → Pseudocode → Visual Trace
+
+---
+
 ## Citation
 
 Phuong, M., & Hutter, M. (2022). *Formal Algorithms for Transformers*. DeepMind Technical Report. arXiv:2207.09238.
