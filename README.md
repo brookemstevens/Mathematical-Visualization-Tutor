@@ -1,4 +1,4 @@
-# Claude Skills: `algorithm-math-visualizer` & `pseudocode-extractor`
+# Claude Skills for Mathematical Visualization: `algorithm-math-visualizer` & `pseudocode-extractor`
 
 **Author:** Brooke Stevens for DS 5690 Generative AI Models in Theory & Practice
 
