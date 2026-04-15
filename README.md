@@ -149,7 +149,7 @@ Beyond the Phuong & Hutter paper covered in DS 5690, this workflow applies equal
 
 ---
 
-## Citation
+## Citations
 
 Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., & Chen, W. (2021). LoRA: Low-Rank Adaptation of Large Language Models. arXiv preprint arXiv:2106.09685.
 
