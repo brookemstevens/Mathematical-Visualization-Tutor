@@ -139,7 +139,7 @@ Beyond the Phuong & Hutter paper covered in DS 5690, this workflow applies equal
 
 ---
 
-### Demos
+## Demos
 
 - [Algorithm Math Visualizer](https://claude.ai/share/45dba08e-81bf-48dd-b4da-b7fcdd26ebde) for *Formal Algorithms for Transformers* (Phuong & Hutter, 2022)
 - [Chained Skills](https://claude.ai/share/b39387dc-a71b-4e37-b84d-440a016b38c3) for *LoRA* (Hu et al., 2021) and [Chained Skills](https://claude.ai/share/55149040-1eb7-402b-a72b-e8900c572ac1) for *RoFormer* (Su et al., 2023)
