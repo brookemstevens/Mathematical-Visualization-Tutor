@@ -133,9 +133,9 @@ The two skills are designed to chain naturally. Starting from any research paper
 1. Use `pseudocode-extractor` to convert the paper's algorithmic content into formal pseudocode.
 2. Use `algorithm-math-visualizer` on the resulting pseudocode to produce a step-by-step numerical trace.
 
-This two-step pipeline takes any research paper or notes document and produces an approachable visual walkthrough of exactly what the algorithm does to a small set of numbers. The goal is to make the innovations in any paper/document accessible to any reader, regardless of their prior familiarity with the notation.
+This two-step pipeline takes any research paper or notes document and produces an approachable visual walkthrough of exactly what the algorithm does to a small set of numbers. The goal is to make the algorithms in any paper accessible to any reader, regardless of their prior familiarity with the notation.
 
-Beyond the Phuong & Hutter paper covered in DS 5690, this workflow applies equally to any paper or notes document a student encounters in research, coursework, or independent study.
+Beyond the Phuong & Hutter paper covered in DS 5690, this workflow applies equally to any paper a student encounters in research, coursework, or independent study.
 
 ---
 
