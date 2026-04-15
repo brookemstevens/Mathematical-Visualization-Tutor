@@ -8,7 +8,7 @@
 
 This work is deeply personal to me, and I am genuinely excited to give something back to future students of this course.
 
-My undergraduate background is in mathematics. As a visual learner in that field, I consistently found that the mode of instruction did not match the way I actually processed and understood material. Professors would write the "elegant" one-liner on the blackboard, the compact expression that captured everything important about a method or algorithm, and move on. But for me, that was rarely enough. Without a worked visual example to ground the notation, it was extraordinarily difficult to build intuition about what was actually happening. Every time, I had to go home and work through a concrete example myself, because it was simply never included in the instruction.
+My undergraduate background is in mathematics. As a visual learner, I consistently found that the mode of instruction did not match the way I actually processed and understood the material. Professors would write the "elegant" one-liner on the blackboard, the compact expression that captured everything important about a method or algorithm, and move on. But for me, that was rarely enough. Without a worked visual example to ground the notation, it was extraordinarily difficult to build intuition about what was actually happening. Every time, I had to go home and work through a concrete example myself, because it was simply never included in the instruction.
 
 This experience does not fully disappear with more training. Even today, with a much stronger foundation in mathematical notation, multi-dimensional spaces and tensor operations can still make my head spin without a numerical example to anchor them. Formal mathematical notation is powerful and precise, but it is not inherently intuitive, especially when you are encountering it for the first time.
 
@@ -135,7 +135,7 @@ The two skills are designed to chain naturally. Starting from any research paper
 
 This two-step pipeline takes any research paper and produces an approachable visual walkthrough of exactly what the algorithm does to a small set of numbers. The goal is to make the innovations in any paper accessible to any reader, regardless of their prior familiarity with the notation.
 
-Beyond the Phuong & Hutter paper covered in class, this workflow applies equally to any paper a student encounters in research, coursework, or independent study.
+Beyond the Phuong & Hutter paper covered in DS 5690, this workflow applies equally to any paper a student encounters in research, coursework, or independent study.
 
 ---
 
