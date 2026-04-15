@@ -149,4 +149,8 @@ Beyond the Phuong & Hutter paper covered in class, this workflow applies equally
 
 ## Citation
 
-Phuong, M., & Hutter, M. (2022). *Formal Algorithms for Transformers*. DeepMind Technical Report. arXiv:2207.09238.
+Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., & Chen, W. (2021). LoRA: Low-Rank Adaptation of Large Language Models. arXiv preprint arXiv:2106.09685.
+
+Su, J., Lu, Y., Pan, S., Murtadha, A., Wen, B., & Liu, Y. (2021). RoFormer: Enhanced Transformer with Rotary Position Embedding. arXiv preprint arXiv:2104.09864.
+
+Phuong, M., & Hutter, M. (2022). Formal Algorithms for Transformers. arXiv preprint arXiv:2207.09238.
