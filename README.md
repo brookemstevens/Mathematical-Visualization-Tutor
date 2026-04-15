@@ -4,7 +4,7 @@
 
 ---
 
-## Motivation (and personal anecdote)
+## Motivation and Personal Anecdote
 
 This work is deeply personal to me, and I am genuinely excited to give something back to future students of this course.
 
@@ -24,7 +24,7 @@ Two skills are provided. They are designed to work independently or in sequence 
 
 ---
 
-### Skill 1 — `algorithm-math-visualizer`
+### Skill 1: `algorithm-math-visualizer`
 
 **Purpose:** Given any algorithm in pseudocode, produce a complete, step-by-step numerical trace using small, human-readable example values.
 
@@ -79,7 +79,7 @@ algorithm-math-visualizer/
 
 ---
 
-### Skill 2 — `pseudocode-extractor`
+### Skill 2: `pseudocode-extractor`
 
 **Purpose:** Given a research paper (as an uploaded PDF or linked text), identify the core algorithmic contributions and rewrite them as clean, formal pseudocode in the style of Phuong & Hutter (2022).
 
