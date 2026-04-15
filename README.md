@@ -126,7 +126,7 @@ pseudocode-extractor/
 
 ---
 
-## Composing the Two Skills
+## Composing the Two Skills for Research Papers and Notes
 
 The two skills are designed to chain naturally. Starting from any research paper or notes document:
 
