@@ -128,14 +128,14 @@ pseudocode-extractor/
 
 ## Composing the Two Skills
 
-The two skills are designed to chain naturally. Starting from any research paper:
+The two skills are designed to chain naturally. Starting from any research paper or notes document:
 
 1. Use `pseudocode-extractor` to convert the paper's algorithmic content into formal pseudocode.
 2. Use `algorithm-math-visualizer` on the resulting pseudocode to produce a step-by-step numerical trace.
 
-This two-step pipeline takes any research paper and produces an approachable visual walkthrough of exactly what the algorithm does to a small set of numbers. The goal is to make the innovations in any paper accessible to any reader, regardless of their prior familiarity with the notation.
+This two-step pipeline takes any research paper or notes document and produces an approachable visual walkthrough of exactly what the algorithm does to a small set of numbers. The goal is to make the innovations in any paper/document accessible to any reader, regardless of their prior familiarity with the notation.
 
-Beyond the Phuong & Hutter paper covered in DS 5690, this workflow applies equally to any paper a student encounters in research, coursework, or independent study.
+Beyond the Phuong & Hutter paper covered in DS 5690, this workflow applies equally to any paper or notes document a student encounters in research, coursework, or independent study.
 
 ---
 
@@ -144,6 +144,7 @@ Beyond the Phuong & Hutter paper covered in DS 5690, this workflow applies equal
 - [Algorithm Math Visualizer](https://claude.ai/share/45dba08e-81bf-48dd-b4da-b7fcdd26ebde) for *Formal Algorithms for Transformers* (Phuong & Hutter, 2022)
 - [Chained Skills](https://claude.ai/share/b39387dc-a71b-4e37-b84d-440a016b38c3) for *LoRA* (Hu et al., 2021) and [Chained Skills](https://claude.ai/share/55149040-1eb7-402b-a72b-e8900c572ac1) for *RoFormer* (Su et al., 2023)
     - Research Paper → Pseudocode → Algorithm Math Visualizer
+- [Chained Skills](https://claude.ai/share/8e59ac25-0541-418b-b886-9d389f400b30) for my class notes from MATH 3620 Introduction to Numerical Mathematics
 
 ---
 
