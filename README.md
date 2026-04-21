@@ -61,18 +61,6 @@ All matrices and vectors are rendered as `$$\begin{bmatrix}...\end{bmatrix}$$` L
 4. The result matrix with its shape annotated.
 5. An optional plain-text note on the geometric or conceptual meaning of the result.
 
-#### Example Excerpt
-
-The following is a single step from a trace of Algorithm 4 (Attention) in Phuong & Hutter (2022) — computing raw attention scores $S = K^\top Q$ on a toy sequence of length 3 with attention dimension 2:
-
-> $$S = K^\top Q \qquad \in \mathbb{R}^{\ell_z \times \ell_x} = \mathbb{R}^{3 \times 3}$$
->
-> $$K^\top = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ -1 & 1 \end{bmatrix}, \qquad Q = \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & 1 \end{bmatrix}$$
->
-> $$S = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & 1 \\ -1 & 1 & 2 \end{bmatrix}$$
-
-Every step in every trace follows this same pattern: symbolic formula → substituted formula → operation shown explicitly → result with shape in both symbolic and numeric form. Full traces repeat this block-by-block for every line of the pseudocode.
-
 #### Reference Files
 
 The skill loads `references/formal-algos-transformers.md` automatically when the algorithm belongs to the Phuong & Hutter paper. This reference encodes the notation, algorithm numbering, and conventions of that paper so the skill can proceed without the user supplying pseudocode manually.
