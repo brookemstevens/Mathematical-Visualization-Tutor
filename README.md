@@ -61,6 +61,18 @@ All matrices and vectors are rendered as `$$\begin{bmatrix}...\end{bmatrix}$$` L
 4. The result matrix with its shape annotated.
 5. An optional plain-text note on the geometric or conceptual meaning of the result.
 
+#### Example Excerpt
+
+The following is a single step from a trace of Algorithm 4 (Attention) in Phuong & Hutter (2022) — computing raw attention scores $S = K^\top Q$ on a toy sequence of length 3 with attention dimension 2:
+
+> $$S = K^\top Q \qquad \in \mathbb{R}^{\ell_z \times \ell_x} = \mathbb{R}^{3 \times 3}$$
+>
+> $$K^\top = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ -1 & 1 \end{bmatrix}, \qquad Q = \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & 1 \end{bmatrix}$$
+>
+> $$S = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & 1 \\ -1 & 1 & 2 \end{bmatrix}$$
+
+Every step in every trace follows this same pattern: symbolic formula → substituted formula → operation shown explicitly → result with shape in both symbolic and numeric form. Full traces repeat this block-by-block for every line of the pseudocode.
+
 #### Reference Files
 
 The skill loads `references/formal-algos-transformers.md` automatically when the algorithm belongs to the Phuong & Hutter paper. This reference encodes the notation, algorithm numbering, and conventions of that paper so the skill can proceed without the user supplying pseudocode manually.
@@ -126,6 +138,20 @@ pseudocode-extractor/
 
 ---
 
+## Design Rationale
+
+A few design choices deserve explanation.
+
+**Why `$$\begin{bmatrix}...\end{bmatrix}$$` as the *only* acceptable output for matrices:** Early iterations of the visualizer produced mixed output: sometimes ASCII grids, sometimes code blocks of Python-like arrays, sometimes Markdown pipe tables, occasionally prose descriptions ("a 2×2 identity matrix"). Each of these modes has a failure case: ASCII misaligns on wide matrices, code blocks invite the reader to treat the output as runnable rather than pedagogical, pipe tables collapse visually in some clients, and prose descriptions defeat the entire point of a visual trace. Collapsing the allowed set to a single mandatory rendering mode is what makes the output reliably readable. The SKILL.md codifies this as a hard rule with an explicit list of forbidden alternatives.
+
+**Why reference files rather than inlining everything in SKILL.md:** Both skills load a companion reference file from `references/` before producing output. This is a deliberate separation tuned to this course's use case. SKILL.md describes what the skill does and when to trigger it. The reference file carries course-specific content: the full notation, algorithm numbering, and conventions of *Formal Algorithms for Transformers* (Phuong & Hutter, 2022), so that the visualizer can trace any algorithm in that paper by name without the student needing to paste pseudocode, and so that the extractor produces output conforming to the same notational standard DS 5690 students are already learning to read. Keeping this material in `references/` rather than inlining it in SKILL.md means the course-specific payload only loads when it is actually needed, the Phuong & Hutter reference can be updated or extended without touching the trigger logic, and SKILL.md stays short enough to behave reliably under Claude's context-loading patterns.
+
+**Why five phases in the pseudocode extractor, ending with a review pass:** Extracting an algorithm from a paper is not a one-shot translation task. Papers routinely conflate motivation with method, leave shapes implicit, or reuse a symbol for two purposes. A single-phase "just write the pseudocode" prompt tends to produce output that is fluent but wrong in ways that are hard to spot. Breaking the work into *understand → plan → write → notate → review* forces each concern to be handled on its own, and the final review pass is the step where most small bugs get caught (an undefined symbol, a stray `for i in range(n)`, an inferred shape that was never flagged).
+
+**Why no interactive elements:** A natural instinct is to make the visualizer interactive, with sliders for dimensions, collapsible steps, a button to recompute. I deliberately forbade all of this. A linear scrolling document matches how students actually read proofs and algorithm traces, with every step visible at once.
+
+---
+
 ## Composing the Two Skills for Research Papers and Notes
 
 The two skills are designed to chain naturally. Starting from any research paper or notes document:
@@ -146,6 +172,39 @@ Beyond the Phuong & Hutter paper covered in DS 5690, this workflow applies equal
     - Research Paper → Pseudocode → Algorithm Math Visualizer
 - [Chained Skills](https://claude.ai/share/8e59ac25-0541-418b-b886-9d389f400b30) for my own class notes from MATH 3620 Introduction to Numerical Mathematics
     - Class Notes → Pseudocode → Algorithm Math Visualizer
+
+---
+
+## Limitations and Known Failure Modes
+
+- **Faithful to the pseudocode, not to the paper:** If the pseudocode-extractor misreads a paper (say, infers a wrong shape or mislabels a matrix transpose), the visualizer will faithfully trace the *wrong* algorithm. The chained pipeline compounds the risk: a subtle extraction bug propagates silently into the numerical trace.
+- **Sequential-dependence algorithms are harder to trace cleanly:** Algorithms with autoregressive or recursive structure produce long, repetitive traces. The linear format holds up, but the payoff per line of output is lower than for feed-forward computations.
+- **No comparison to a "bare Claude" baseline:** I did not formally evaluate how much the skills improve on what Claude would produce with no skill attached. Informally, the skills produce noticeably more consistent output (always LaTeX, always with shape annotations, always with a notation table) but a rigorous A/B evaluation is future work.
+
+---
+
+## Model and Implementation Details
+
+- **Model used:** Claude Opus 4.6 (during skill development and in all demo traces).
+- **Built with:** Anthropic's official `skill-creator` skill, following the standard SKILL.md + `references/` layout.
+- **Intended use:** Educational support for students reading formal algorithmic papers. Primary target is DS 5690's engagement with *Formal Algorithms for Transformers*, with a secondary goal of generalizing to any paper a student encounters.
+- **Out of scope:** These skills are not designed to verify correctness of an algorithm, to benchmark model implementations, or to produce production-quality algorithm documentation. They are teaching tools.
+- **License:** MIT (open for educational reuse and modification). Attribution appreciated.
+- **Ethical / bias consideration.** Both skills produce output that *looks* authoritative, which can make errors hard to spot. A student who treats a trace as a proof, rather than as an illustration, risks internalizing a subtle mistake. I have tried to mitigate this by keeping traces short and reproducible by hand, and by documenting failure modes above, but the risk is worth naming directly. The skills should be used *alongside* the paper, not as a complete substitute for it.
+
+---
+
+## Impact and Next Steps
+
+**Impact:** The immediate impact is for future DS 5690 students engaging with *Formal Algorithms for Transformers*: the wall that paper presents to a student unfamiliar with compact mathematical notation is now more climbable. More broadly, any student reading an ML paper for the first time can chain the two skills to get a concrete worked example on any algorithm, on demand, at a small enough scale to follow by hand.
+
+**What this reveals:** The need for a skill like this suggests something about the gap between how ML research is written and how it is learned. Papers optimize for compactness and precision, and many students need worked examples and concrete values.
+
+**Next steps:**
+- **Evaluation:** Run a proper A/B test: Claude with the skill vs. Claude without, same prompts, measure consistency of output format, rate of arithmetic errors, and student-rated clarity.
+- **Expanded reference coverage:** Extend the Phuong & Hutter reference to cover additional papers frequently taught in ML courses (e.g., *Attention Is All You Need*, the original LoRA, flash attention), so the visualizer can trace those algorithms without a prior extraction step.
+- **Complementary skill for diagrams:** A logical companion skill would render the computational graph of an algorithm as a complement to the numerical trace. Notation + numbers + graph is closer to how students actually draw these things on paper when learning them.
+- **Classroom deployment:** Encourage the instructor to use the skills during classroom instruction, and/or encourage students to use them on their own time.
 
 ---
 
